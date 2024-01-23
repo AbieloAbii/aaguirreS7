@@ -11,16 +11,22 @@ namespace serviciosWeb.Vistas
     {
         private readonly Estudiante estudiante;
 
+        // Constructor de la página ActualizarEliminar que recibe un objeto Estudiante
         public ActualizarEliminar(Estudiante datos)
         {
+            // Inicializar la página
             InitializeComponent();
-            txtCodigo.Text = datos.codigo.ToString();
-            txtNombre.Text = datos.nombre;
-            txtApellido.Text = datos.apellido;
-            txtEdad.Text = datos.edad.ToString();
+
+            // Configurar los campos de entrada con los datos del Estudiante proporcionado
+            txtCodigo.Text = datos.codigo.ToString();  // Configurar el código como texto
+            txtNombre.Text = datos.nombre;            // Configurar el nombre
+            txtApellido.Text = datos.apellido;        // Configurar el apellido
+            txtEdad.Text = datos.edad.ToString();      // Configurar la edad como texto
+
+            // Almacenar el objeto Estudiante en la variable de la clase para su posterior uso
             estudiante = datos;
         }
-
+        //Actualizar
         private async void btnActualizar_Clicked(object sender, EventArgs e)
         {
             try
@@ -57,7 +63,7 @@ namespace serviciosWeb.Vistas
                 DisplayAlert("ERROR", ex.Message, "CERRAR");
             }
         }
-
+        //Eliminar
         private void btnEliminar_Clicked(object sender, EventArgs e)
         {
             try
